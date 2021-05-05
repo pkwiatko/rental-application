@@ -1,11 +1,20 @@
 package com.pkwiatko.rentalapplication.domain.apartment;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class Apartment {
+    @Id
+    @GeneratedValue
     private String id;
+
     private final String ownerId;
+
+    @Embedded
     private final Address address;
+
+    @OneToMany
     private final List<Room> rooms;
     private final String description;
 
