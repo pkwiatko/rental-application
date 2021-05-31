@@ -4,6 +4,7 @@ import com.pkwiatko.rentalapplication.domain.apartment.ApartmentBooked;
 import com.pkwiatko.rentalapplication.domain.apartmentbookinghistory.ApartmentBooking;
 import com.pkwiatko.rentalapplication.domain.apartmentbookinghistory.ApartmentBookingHistory;
 import com.pkwiatko.rentalapplication.domain.apartmentbookinghistory.ApartmentBookingHistoryRepository;
+import com.pkwiatko.rentalapplication.domain.apartmentbookinghistory.BookingPeriod;
 import org.springframework.context.event.EventListener;
 
 public class ApartmentBookingHistoryEventListener {
@@ -17,9 +18,10 @@ public class ApartmentBookingHistoryEventListener {
     @EventListener
     public void  consume(ApartmentBooked apartmentBooked)   {
         ApartmentBookingHistory apartmentBookingHistory = getApartmentBookingHistoryFor(apartmentBooked.getApartmentId());
+        BookingPeriod bookingPeriod = new BookingPeriod(apartmentBooked.getPeriodStart(), apartmentBooked.getPeriodEnd());
 
         apartmentBookingHistory.add(ApartmentBooking.start(
-                apartmentBooked.getOwnerId(), apartmentBooked.getTenantId(), apartmentBooked.getPeriodStart(), apartmentBooked.getPeriodEnd()));
+                apartmentBooked.getOwnerId(), apartmentBooked.getTenantId(), bookingPeriod));
 
         apartmentBookingHistoryRepository.save(apartmentBookingHistory);
     }
