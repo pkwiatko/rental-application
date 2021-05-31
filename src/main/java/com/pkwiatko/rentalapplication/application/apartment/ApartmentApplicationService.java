@@ -4,6 +4,7 @@ import com.pkwiatko.rentalapplication.domain.apartment.Apartment;
 import com.pkwiatko.rentalapplication.domain.apartment.ApartmentFactory;
 import com.pkwiatko.rentalapplication.domain.apartment.ApartmentRepository;
 
+import java.time.LocalDate;
 import java.util.Map;
 
 public class ApartmentApplicationService {
@@ -21,4 +22,7 @@ public class ApartmentApplicationService {
         apartmentRepository.save(apartment);
     }
 
+    public void book(String id, String tenantId, LocalDate start, LocalDate end) {
+
+    }
 }

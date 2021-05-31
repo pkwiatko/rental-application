@@ -1,4 +1,4 @@
-package com.pkwiatko.rentalapplication.infrastructure.web.rest.api.hotelroom;
+package com.pkwiatko.rentalapplication.infrastructure.rest.api.hotelroom;
 
 import java.util.Map;
 

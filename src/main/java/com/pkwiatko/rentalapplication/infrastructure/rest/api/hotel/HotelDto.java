@@ -1,4 +1,4 @@
-package com.pkwiatko.rentalapplication.infrastructure.web.rest.api.hotel;
+package com.pkwiatko.rentalapplication.infrastructure.rest.api.hotel;
 
 public class HotelDto {
     private final String name;

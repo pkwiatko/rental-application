@@ -1,4 +1,4 @@
-package com.pkwiatko.rentalapplication.infrastructure.web.rest.api.apartment;
+package com.pkwiatko.rentalapplication.infrastructure.rest.api.apartment;
 
 import java.util.Map;
 

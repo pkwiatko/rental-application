@@ -1,4 +1,4 @@
-package com.pkwiatko.rentalapplication.infrastructure.web.rest.api.hotelroom;
+package com.pkwiatko.rentalapplication.infrastructure.rest.api.hotelroom;
 
 import com.pkwiatko.rentalapplication.application.hotelroom.HotelRoomApplicationService;
 import org.springframework.web.bind.annotation.PostMapping;
