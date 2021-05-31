@@ -1,5 +1,7 @@
 package com.pkwiatko.rentalapplication.domain.apartment;
 
+import com.pkwiatko.rentalapplication.domain.eventchannel.EventChannel;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -25,7 +27,8 @@ public class Apartment {
         this.description = description;
     }
 
-    public void book(String tenantId, Period period) {
+    public void book(String tenantId, Period period, EventChannel eventChannel) {
         ApartmentBooked apartmentBooked = ApartmentBooked.create(id, ownerId, tenantId, period);
+        eventChannel.publish(apartmentBooked);
     }
 }
